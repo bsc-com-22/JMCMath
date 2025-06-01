@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMC Mathematics - Resources, Lessons & Study Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                JMC<span class="logo-subtitle">| Math & Academics</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav">
+                <a href="#" class="active">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-trigger">
+                        Resources <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Library</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                </div>
+                <a href="#">Courses</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <!-- Search and Actions -->
+            <div class="header-actions">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search.......">
+                </div>
+                <a href="jmcplus.html" class="btn-primary no-underline">
+                    <i class="fas fa-crown"></i> JMC Plus
+                </a>
+
+                <a href="auth.html" class="btn-secondary no-underline">
+                    <i class="fas fa-user"></i> Sign In
+                </a>
+
+            </div>
+
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search.......">
+            </div>
+            <nav class="mobile-nav">
+                <a href="#">Home</a>
+                <button class="mobile-dropdown-trigger" id="mobile-dropdown-trigger">
+                    Resources <i class="fas fa-chevron-down" id="mobile-dropdown-icon"></i>
+                </button>
+                <div class="mobile-dropdown-content" id="mobile-dropdown">
+                    <a href="#">Library</a>
+                    <a href="#">Tutorials</a>
+                </div>
+                <a href="#">Courses</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="mobile-actions">
+                <button class="btn-primary">
+                    <i class="fas fa-crown"></i> JCM Plus
+                </button>
+                <button class="btn-secondary">
+                    <i class="fas fa-user"></i> Sign In
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>
+                Mathematics Resources, Lessons<br>
+                & Study Tools — Built for You
+            </h1>
+
+            <p>
+                JMC Mathematics delivers clean, structured, and effective<br>
+                learning materials designed for both self-learners and schools.<br>
+                No fluff — just real math, made simple.
+            </p>
+
+            <button class="hero-btn">Explore All Courses</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>Why Choose JMC Mathematics?</h2>
+                <p>
+                    Our comprehensive approach to mathematics education ensures students grasp concepts thoroughly and
+                    build lasting understanding.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book"></i></div>
+                    <h3>Structured Learning</h3>
+                    <p>
+                        Our curriculum is carefully designed to build concepts progressively, ensuring solid
+                        foundations.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Focused Approach</h3>
+                    <p>
+                        No unnecessary complications - just clear, effective mathematics education that works.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Progress Tracking</h3>
+                    <p>
+                        See improvement quickly with our proven teaching methods and practice tools.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Featured Courses</h2>
+                <p>Discover our most popular and highly-rated mathematics courses designed to help you excel</p>
+            </div>
+
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Advanced Calculus</h3>
+                        <p class="course-description">Master the fundamentals of differential and integral calculus with
+                            our comprehensive course.</p>
+                        <div class="course-meta">
+                            <span class="course-level">Advanced</span>
+                            <span class="course-duration">12 weeks</span>
+                        </div>
+                        <button class="course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Linear Algebra</h3>
+                        <p class="course-description">Learn vectors, matrices, and linear transformations in this
+                            essential mathematics course.</p>
+                        <div class="course-meta">
+                            <span class="course-level">Intermediate</span>
+                            <span class="course-duration">10 weeks</span>
+                        </div>
+                        <button class="course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Algebra Fundamentals</h3>
+                        <p class="course-description">Build a solid foundation in algebra with step-by-step explanations
+                            and practice problems.</p>
+                        <div class="course-meta">
+                            <span class="course-level">Beginner</span>
+                            <span class="course-duration">8 weeks</span>
+                        </div>
+                        <button class="course-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="browse-all-btn">Browse All Courses</button>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Popular Courses</h2>
+                <p>Join thousands of students in our most sought-after mathematics courses</p>
+            </div>
+
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Statistics & Probability</h3>
+                        <p class="course-description">Understand data analysis, probability distributions, and
+                            statistical inference.</p>
+                        <div class="course-meta">
+                            <span class="course-level">Intermediate</span>
+                            <span class="course-duration">14 weeks</span>
+                        </div>
+                        <button class="course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Geometry Mastery</h3>
+                        <p class="course-description">Explore shapes, angles, and spatial relationships in this
+                            comprehensive geometry course.</p>
+                        <div class="course-meta">
+                            <span class="course-level">Beginner</span>
+                            <span class="course-duration">10 weeks</span>
+                        </div>
+                        <button class="course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Trigonometry</h3>
+                        <p class="course-description">Master sine, cosine, tangent, and their applications in real-world
+                            problems.</p>
+                        <div class="course-meta">
+                            <span class="course-level">Intermediate</span>
+                            <span class="course-duration">9 weeks</span>
+                        </div>
+                        <button class="course-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="browse-all-btn">Browse All Courses</button>
+        </div>
+    </section>
+
+    <!-- Newly Added Resources Section -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Newly Added Resources</h2>
+                <p>Stay up-to-date with our latest tutorials, guides, and learning materials</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <span class="resource-type">Tutorial</span>
+                    <h3 class="resource-title">Solving Quadratic Equations</h3>
+                    <p class="resource-description">A step-by-step guide to mastering quadratic equations using multiple
+                        methods.</p>
+                    <p class="resource-date">Added 2 days ago</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">Worksheet</span>
+                    <h3 class="resource-title">Calculus Practice Problems</h3>
+                    <p class="resource-description">100 practice problems covering derivatives, integrals, and
+                        applications.</p>
+                    <p class="resource-date">Added 5 days ago</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">Video</span>
+                    <h3 class="resource-title">Understanding Matrices</h3>
+                    <p class="resource-description">Visual explanation of matrix operations and their real-world
+                        applications.</p>
+                    <p class="resource-date">Added 1 week ago</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">Guide</span>
+                    <h3 class="resource-title">Geometry Formulas Cheat Sheet</h3>
+                    <p class="resource-description">Quick reference guide for all essential geometry formulas and
+                        theorems.</p>
+                    <p class="resource-date">Added 1 week ago</p>
+                </div>
+            </div>
+
+            <button class="browse-all-btn">View All Resources</button>
+        </div>
+    </section>
+
+    <!-- All Access Premium Section -->
+    <section class="premium-section">
+        <div class="premium-container">
+            <div class="premium-icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <h2 class="premium-title">JMC Plus - All Access</h2>
+            <p class="premium-subtitle">Unlock unlimited access to premium content and advanced features</p>
+
+            <div class="premium-features">
+                <div class="premium-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Access to all premium courses</span>
+                </div>
+                <div class="premium-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Downloadable resources</span>
+                </div>
+                <div class="premium-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Priority support</span>
+                </div>
+                <div class="premium-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Certificates of completion</span>
+                </div>
+                <div class="premium-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Advanced practice problems</span>
+                </div>
+                <div class="premium-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Live Q&A sessions</span>
+                </div>
+            </div>
+
+            <a href="jmcplus.html"><button class="premium-cta">Get Premium Access</button></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>JMC Mathematics</h3>
+                    <p>
+                        Delivering clean, structured, and effective learning materials designed for both self-learners
+                        and schools. No fluff — just real math, made simple.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subjects -->
+                <div class="footer-section">
+                    <h3>Subjects</h3>
+                    <ul>
+                        <li><a href="#">Algebra</a></li>
+                        <li><a href="#">Geometry</a></li>
+                        <li><a href="#">Calculus</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#">Trigonometry</a></li>
+                        <li><a href="#">Pre-Calculus</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest math resources and tips.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 JMC Mathematics. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

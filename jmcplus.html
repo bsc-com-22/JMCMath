@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMC Mathematics - Resources, Lessons & Study Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body{
+        background-color: #f9fafb;
+    }
+    .hero{
+        height: 50vh;
+        background-color: #111827;
+        margin-top: -30px;
+    }
+    .hero h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.premium-icon {
+    font-size: 3rem;
+    color: #fbbf24;
+    margin-bottom: 1.5rem;
+}
+
+.premium-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Container and Section Title */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+/* Packages Grid Layout */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Package Card Styles */
+.package-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.package-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Styling */
+.package-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.package-icon.starter {
+    color: #10b981; /* Emerald */
+}
+
+.package-icon.growth {
+    color: #3b82f6; /* Blue */
+}
+
+.package-icon.pro {
+    color: #d97706; /* Amber */
+}
+
+/* Text Styling */
+.package-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.package-description {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+/* Feature List */
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.package-features li {
+    font-size: 0.95rem;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+/* Button Styling */
+.package-btn {
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.package-btn:hover {
+    background-color: #d97706;
+}
+
+
+
+</style>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                JMC<span class="logo-subtitle">| Math & Academics</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-trigger">
+                        Resources <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Library</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                </div>
+                <a href="#">Courses</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <!-- Search and Actions -->
+            <div class="header-actions">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search.......">
+                </div>
+                <a href="jmcplus.html" class="btn-primary no-underline">
+                    <i class="fas fa-crown"></i> JMC Plus
+                </a>
+
+                <a href="auth.html" class="btn-secondary no-underline">
+                    <i class="fas fa-user"></i> Sign In
+                </a>
+
+            </div>
+
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search.......">
+            </div>
+            <nav class="mobile-nav">
+                <a href="#">Home</a>
+                <button class="mobile-dropdown-trigger" id="mobile-dropdown-trigger">
+                    Resources <i class="fas fa-chevron-down" id="mobile-dropdown-icon"></i>
+                </button>
+                <div class="mobile-dropdown-content" id="mobile-dropdown">
+                    <a href="#">Library</a>
+                    <a href="#">Tutorials</a>
+                </div>
+                <a href="#">Courses</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="mobile-actions">
+                <button class="btn-primary">
+                    <i class="fas fa-crown"></i> JCM Plus
+                </button>
+                <button class="btn-secondary">
+                    <i class="fas fa-user"></i> Sign In
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="premium-icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <h2 class="premium-title">JMC Plus - Packages</h2>
+            <p class="premium-subtitle">Unlock unlimited access to premium content and advanced features</p>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section class="content-section jmcplus-section">
+  <div class="section-container">
+
+
+    <div class="packages-grid">
+
+      <!-- Starter Package -->
+      <div class="package-card">
+        <div class="package-icon starter"><i class="fas fa-star"></i></div>
+        <h3 class="package-title">Starter Plan - <i>Monthly</i></h3>
+        <p class="package-description">Kickstart your math mastery journey with essential tools, quizzes, and tutorial guides.</p>
+        <ul class="package-features">
+            <li><i class="fas fa-check-circle"></i>Price: MWK2,500/month</li>
+          <li><i class="fas fa-check-circle"></i> Access to selected premium tutorials</li>
+          <li><i class="fas fa-check-circle"></i> Downloadable PDFs for core topics</li>
+          <li><i class="fas fa-check-circle"></i> Practice quizzes and progress tracking</li>
+        </ul>
+        <button class="package-btn">Choose Starter</button>
+      </div>
+
+      <!-- Growth Package -->
+      <div class="package-card">
+        <div class="package-icon growth"><i class="fas fa-rocket"></i></div>
+        <h3 class="package-title">Growth Plan - <i>3 Months</i></h3>
+        <p class="package-description">Deepen your skills with advanced problem sets, and analytics.</p>
+        <ul class="package-features">
+            <li><i class="fas fa-check-circle"></i> Price: MWK6,000/3 months (Save 20%)</li>
+          <li><i class="fas fa-check-circle"></i> Everything in Starter</li>
+          <li><i class="fas fa-check-circle"></i> Full access to all video tutorials</li>
+          <li><i class="fas fa-check-circle"></i> Advanced topic PDFs</li>
+          <li><i class="fas fa-check-circle"></i> 1 live Q&A session per month</li>
+          <li><i class="fas fa-check-circle"></i> Progress analytics</li>
+        </ul>
+        <button class="package-btn">Choose Growth</button>
+      </div>
+
+      <!-- Pro Package -->
+      <div class="package-card">
+        <div class="package-icon pro"><i class="fas fa-gem"></i></div>
+        <h3 class="package-title">Pro Plan - <i>Yearly</i></h3>
+        <p class="package-description">Unlock the full experience with 1-on-1 mentorship, mock exams, and exclusive content.</p>
+        <ul class="package-features">
+            <li><i class="fas fa-check-circle"></i> Price: MWK18,000/year (Best Value)</li>
+          <li><i class="fas fa-check-circle"></i> Everything in Growth</li>
+          <li><i class="fas fa-check-circle"></i> 1-on-1 mentorship</li>
+          <li><i class="fas fa-check-circle"></i> Exclusive Pro-only content</li>
+        </ul>
+        <button class="package-btn">Choose Pro</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>JMC Mathematics</h3>
+                    <p>
+                        Delivering clean, structured, and effective learning materials designed for both self-learners
+                        and schools. No fluff — just real math, made simple.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subjects -->
+                <div class="footer-section">
+                    <h3>Subjects</h3>
+                    <ul>
+                        <li><a href="#">Algebra</a></li>
+                        <li><a href="#">Geometry</a></li>
+                        <li><a href="#">Calculus</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#">Trigonometry</a></li>
+                        <li><a href="#">Pre-Calculus</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest math resources and tips.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 JMC Mathematics. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
