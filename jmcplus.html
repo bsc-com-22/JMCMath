@@ -4,150 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMC Mathematics - Resources, Lessons & Study Tools</title>
+    <title>JMC Mathematics - Courses</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-    body{
-        background-color: #f9fafb;
-    }
-    .hero{
-        height: 50vh;
-        background-color: #111827;
-        margin-top: -30px;
-    }
-    .hero h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-    color: white;
-}
 
-.hero p {
-    font-size: 1.125rem;
-    color: #d1d5db;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    max-width: 768px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.premium-icon {
-    font-size: 3rem;
-    color: #fbbf24;
-    margin-bottom: 1.5rem;
-}
-
-.premium-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-/* Container and Section Title */
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-
-
-/* Packages Grid Layout */
-.packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Package Card Styles */
-.package-card {
-    background: white;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    padding: 2rem 1.5rem;
-    text-align: center;
-}
-
-.package-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-/* Icon Styling */
-.package-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.package-icon.starter {
-    color: #10b981; /* Emerald */
-}
-
-.package-icon.growth {
-    color: #3b82f6; /* Blue */
-}
-
-.package-icon.pro {
-    color: #d97706; /* Amber */
-}
-
-/* Text Styling */
-.package-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 0.5rem;
-}
-
-.package-description {
-    font-size: 1rem;
-    color: #6b7280;
-    margin-bottom: 1.5rem;
-}
-
-/* Feature List */
-.package-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-}
-
-.package-features li {
-    font-size: 0.95rem;
-    color: #374151;
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    text-align: left;
-}
-
-/* Button Styling */
-.package-btn {
-    background-color: #f59e0b;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.25rem;
-    font-size: 0.95rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.package-btn:hover {
-    background-color: #d97706;
-}
-
-
-
-</style>
 <body>
     <!-- Header -->
     <header class="header">
@@ -165,12 +26,12 @@
                         Resources <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">Library</a>
-                        <a href="#">Tutorials</a>
+                        <a href="library.html">Library</a>
+                        <a href="tutorials.html">Tutorials</a>
                     </div>
                 </div>
-                <a href="#">Courses</a>
-                <a href="#">Contact</a>
+                <a href="courses.html">Courses</a>
+                <a href="contact.html">Contact</a>
             </nav>
 
             <!-- Search and Actions -->
@@ -183,14 +44,14 @@
                     <i class="fas fa-crown"></i> JMC Plus
                 </a>
 
-                <a href="auth.html" class="btn-secondary no-underline">
+                <a href="SignIn.html" class="btn-secondary no-underline">
                     <i class="fas fa-user"></i> Sign In
                 </a>
 
             </div>
 
             <!-- Mobile menu button -->
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <button type="menu" class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars" id="menu-icon"></i>
             </button>
         </div>
@@ -202,96 +63,105 @@
                 <input type="text" class="search-input" placeholder="Search.......">
             </div>
             <nav class="mobile-nav">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <button class="mobile-dropdown-trigger" id="mobile-dropdown-trigger">
                     Resources <i class="fas fa-chevron-down" id="mobile-dropdown-icon"></i>
                 </button>
                 <div class="mobile-dropdown-content" id="mobile-dropdown">
-                    <a href="#">Library</a>
-                    <a href="#">Tutorials</a>
+                    <a href="library.html">Library</a>
+                    <a href="tutorials.html">Tutorials</a>
                 </div>
-                <a href="#">Courses</a>
-                <a href="#">Contact</a>
+                <a href="courses.html">Courses</a>
+                <a href="contact.html">Contact</a>
             </nav>
             <div class="mobile-actions">
-                <button class="btn-primary">
-                    <i class="fas fa-crown"></i> JCM Plus
-                </button>
-                <button class="btn-secondary">
-                    <i class="fas fa-user"></i> Sign In
-                </button>
+                <a href="jmcplus.html">
+                    <button class="btn-primary">
+                        <i class="fas fa-crown"></i> JMC Plus
+                    </button>
+                </a>
+                <a href="SignIn.html">
+                    <button class="btn-secondary">
+                        <i class="fas fa-user"></i> Sign In
+                    </button>
+                </a>
             </div>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="premium-icon">
-                <i class="fas fa-crown"></i>
-            </div>
-            <h2 class="premium-title">JMC Plus - Packages</h2>
-            <p class="premium-subtitle">Unlock unlimited access to premium content and advanced features</p>
+    <section class="jmc-hero">
+        <div class="jmc-hero-container">
+            <h1>JMC Plus Membership</h1>
+            <p>Take your math skills to the next level with our premium learning packages</p>
         </div>
     </section>
+    <div class="pricing-container">
+        <div class="pricing-grid">
+            <!-- Starter Package -->
+            <div class="pricing-card">
+                <div class="package-header">
+                    <i class="fas fa-rocket"></i>
+                    <h2>Starter</h2>
+                    <p>Perfect for students beginning their math journey</p>
+                </div>
+                <div class="package-price">
+                    <span class="price">MWK3,000</span>/month
+                </div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Access to basic video tutorials</li>
+                    <li><i class="fas fa-check"></i> Practice problems with solutions</li>
+                    <li><i class="fas fa-check"></i> Progress tracking</li>
+                    <li><i class="fas fa-check"></i> Mobile app access</li>
+                </ul>
+                <button class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></button>
+            </div>
 
-    <!-- Popular Courses Section -->
-    <section class="content-section jmcplus-section">
-  <div class="section-container">
+            <!-- Growth Package -->
+            <div class="pricing-card featured">
+                <div class="package-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Growth</h2>
+                    <p>For dedicated learners seeking comprehensive support</p>
+                </div>
+                <div class="package-price">
+                    <span class="price">MWK9,000</span>/3 months
+                </div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> All Starter features</li>
+                    <li><i class="fas fa-check"></i> Live weekly Q&A sessions</li>
+                    <li><i class="fas fa-check"></i> Downloadable study materials</li>
+                    <li><i class="fas fa-check"></i> Practice tests with detailed solutions</li>
+                    <li><i class="fas fa-check"></i> Email support</li>
+                </ul>
+                <button class="btn-primary">Subscribe Now <i class="fas fa-crown"></i></button>
+            </div>
 
+            <!-- Pro Package -->
+            <div class="pricing-card">
+                <div class="package-header">
+                    <i class="fas fa-star"></i>
+                    <h2>Pro</h2>
+                    <p>Ultimate package for serious math achievers</p>
+                </div>
+                <div class="package-price">
+                    <span class="price">MWK18,000</span>/year
+                </div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> All Growth features</li>
+                    <li><i class="fas fa-check"></i> 1-on-1 mentorship sessions</li>
+                    <li><i class="fas fa-check"></i> Advanced problem sets</li>
+                    <li><i class="fas fa-check"></i> Exam preparation modules</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                    <li><i class="fas fa-check"></i> Custom study plans</li>
+                </ul>
+                <button class="btn-primary">Upgrade to Pro <i class="fas fa-graduation-cap"></i></button>
+            </div>
+        </div>
 
-    <div class="packages-grid">
-
-      <!-- Starter Package -->
-      <div class="package-card">
-        <div class="package-icon starter"><i class="fas fa-star"></i></div>
-        <h3 class="package-title">Starter Plan - <i>Monthly</i></h3>
-        <p class="package-description">Kickstart your math mastery journey with essential tools, quizzes, and tutorial guides.</p>
-        <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i>Price: MWK2,500/month</li>
-          <li><i class="fas fa-check-circle"></i> Access to selected premium tutorials</li>
-          <li><i class="fas fa-check-circle"></i> Downloadable PDFs for core topics</li>
-          <li><i class="fas fa-check-circle"></i> Practice quizzes and progress tracking</li>
-        </ul>
-        <button class="package-btn">Choose Starter</button>
-      </div>
-
-      <!-- Growth Package -->
-      <div class="package-card">
-        <div class="package-icon growth"><i class="fas fa-rocket"></i></div>
-        <h3 class="package-title">Growth Plan - <i>3 Months</i></h3>
-        <p class="package-description">Deepen your skills with advanced problem sets, and analytics.</p>
-        <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> Price: MWK6,000/3 months (Save 20%)</li>
-          <li><i class="fas fa-check-circle"></i> Everything in Starter</li>
-          <li><i class="fas fa-check-circle"></i> Full access to all video tutorials</li>
-          <li><i class="fas fa-check-circle"></i> Advanced topic PDFs</li>
-          <li><i class="fas fa-check-circle"></i> 1 live Q&A session per month</li>
-          <li><i class="fas fa-check-circle"></i> Progress analytics</li>
-        </ul>
-        <button class="package-btn">Choose Growth</button>
-      </div>
-
-      <!-- Pro Package -->
-      <div class="package-card">
-        <div class="package-icon pro"><i class="fas fa-gem"></i></div>
-        <h3 class="package-title">Pro Plan - <i>Yearly</i></h3>
-        <p class="package-description">Unlock the full experience with 1-on-1 mentorship, mock exams, and exclusive content.</p>
-        <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> Price: MWK18,000/year (Best Value)</li>
-          <li><i class="fas fa-check-circle"></i> Everything in Growth</li>
-          <li><i class="fas fa-check-circle"></i> 1-on-1 mentorship</li>
-          <li><i class="fas fa-check-circle"></i> Exclusive Pro-only content</li>
-        </ul>
-        <button class="package-btn">Choose Pro</button>
-      </div>
-
+        <div class="pricing-footer">
+            <p>All packages include a 7-day free trial. Cancel anytime.</p>
+            <p>Need help choosing? <a href="#" class="contact-link">Contact our team</a></p>
+        </div>
     </div>
-  </div>
-</section>
-
-
-    
 
     <!-- Footer -->
     <footer class="footer">
@@ -324,12 +194,12 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Courses</a></li>
+                        <li><a href="courses.html">Courses</a></li>
                         <li><a href="#">Resources</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
 
@@ -370,7 +240,146 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+
+    <style>
+        .jmc-hero {
+            background: #111827;
+            color: white;
+            padding: 5rem 1rem;
+            text-align: left;
+            margin-top: 64px;
+        }
+
+        .jmc-hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .jmc-hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .jmc-hero p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 768px;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            margin-top: -50px;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #ef4444;
+            position: relative;
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .package-header i {
+            font-size: 2.5rem;
+            color: #ef4444;
+            margin-bottom: 1rem;
+        }
+
+        .package-header h2 {
+            font-size: 1.8rem;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-header p {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .package-price {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1f2937;
+            font-size: 1.2rem;
+        }
+
+        .package-price .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ef4444;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            margin-bottom: 1rem;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+        }
+
+        .package-features i {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-footer {
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .contact-link {
+            color: #ef4444;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 
 </html>

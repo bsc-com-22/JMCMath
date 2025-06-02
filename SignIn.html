@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMC Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111827;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .auth-container {
+            background: #1f2937;
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 380px;
+            border: 1px solid #374151;
+            position: relative;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: none;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            display: none;
+        }
+
+        .back-btn:hover {
+            color: #fff;
+            background: #374151;
+        }
+
+        .back-btn.show {
+            display: block;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin: 0 auto 32px;
+            display: block;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .header p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            height: 48px;
+            background: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 8px;
+            padding: 0 16px;
+            color: #fff;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #ef4444;
+        }
+
+        .input-field::placeholder {
+            color: #9ca3af;
+        }
+
+        .btn {
+            width: 100%;
+            height: 48px;
+            background: #ef4444;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-bottom: 16px;
+        }
+
+        .btn:hover {
+            background: #dc2626;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .link {
+            color: #ef4444;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .text-right {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .divider {
+            margin: 24px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #4b5563;
+        }
+
+        .divider span {
+            background: #1f2937;
+            padding: 0 16px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        .error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            color: #ef4444;
+            font-size: 13px;
+            text-align: center;
+            display: none;
+        }
+
+        .code-input {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .code-input input {
+            width: 48px;
+            height: 48px;
+            background: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 8px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .code-input input:focus {
+            outline: none;
+            border-color: #ef4444;
+        }
+
+        @media (max-width: 480px) {
+            .auth-container {
+                margin: 16px;
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <button class="back-btn" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <!-- Login Page -->
+        <div id="login-page" class="page active">
+            <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+            
+            <div class="header">
+                <h1>Welcome back</h1>
+                <p>Sign in to your account</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                </div>
+                <div class="text-right">
+                    <span class="link" onclick="showPage('forgot-password')">Forgot password?</span>
+                </div>
+                <button type="submit" class="btn">Sign in</button>
+            </form>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <div class="text-center">
+                <span class="link" onclick="showPage('signup')">Create new account</span>
+            </div>
+        </div>
+
+        <!-- Signup Page -->
+        <div id="signup-page" class="page">
+            <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+            
+            <div class="header">
+                <h1>Create account</h1>
+                <p>Join us today</p>
+            </div>
+
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="confirm-password" class="input-field" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="btn">Create account</button>
+            </form>
+
+            <div class="text-center">
+                <span class="link" onclick="showPage('login')">Already have an account?</span>
+            </div>
+        </div>
+
+        <!-- Forgot Password Page -->
+        <div id="forgot-password-page" class="page">
+            <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+            
+            <div class="header">
+                <h1>Reset password</h1>
+                <p>Enter your email to get reset link</p>
+            </div>
+
+            <form onsubmit="handleForgotPassword(event)">
+                <div class="form-group">
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn">Send reset link</button>
+            </form>
+
+            <div class="text-center">
+                <span class="link" onclick="showPage('login')">Back to sign in</span>
+            </div>
+        </div>
+
+        <!-- Reset Password Page -->
+        <div id="reset-password-page" class="page">
+            <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+            
+            <div class="header">
+                <h1>New password</h1>
+                <p>Enter your new password</p>
+            </div>
+
+            <form onsubmit="handleResetPassword(event)">
+                <div class="form-group">
+                    <input type="password" name="new-password" class="input-field" placeholder="New password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="confirm-new-password" class="input-field" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="btn">Update password</button>
+            </form>
+        </div>
+
+        <!-- Email Verification Page -->
+        <div id="email-verification-page" class="page">
+            <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+            
+            <div class="header">
+                <h1>Verify email</h1>
+                <p>Enter the 6-digit code sent to your email</p>
+            </div>
+
+            <form onsubmit="handleEmailVerification(event)">
+                <div class="code-input">
+                    <input type="text" maxlength="1" oninput="moveNext(this, 0)">
+                    <input type="text" maxlength="1" oninput="moveNext(this, 1)">
+                    <input type="text" maxlength="1" oninput="moveNext(this, 2)">
+                    <input type="text" maxlength="1" oninput="moveNext(this, 3)">
+                    <input type="text" maxlength="1" oninput="moveNext(this, 4)">
+                    <input type="text" maxlength="1" oninput="moveNext(this, 5)">
+                </div>
+                <button type="submit" class="btn">Verify</button>
+            </form>
+
+            <div class="text-center">
+                <span class="link" onclick="resendCode()">Resend code</span>
+            </div>
+        </div>
+
+        <div id="error-msg" class="error"></div>
+    </div>
+
+    <script>
+        let currentPage = 'login';
+        let pageHistory = [];
+
+        function showPage(pageId) {
+            document.getElementById(currentPage + '-page').classList.remove('active');
+            
+            if (pageHistory[pageHistory.length - 1] !== currentPage) {
+                pageHistory.push(currentPage);
+            }
+            
+            currentPage = pageId;
+            document.getElementById(pageId + '-page').classList.add('active');
+            
+            const backBtn = document.querySelector('.back-btn');
+            if (pageId === 'login') {
+                backBtn.classList.remove('show');
+                pageHistory = [];
+            } else {
+                backBtn.classList.add('show');
+            }
+            
+            hideError();
+        }
+
+        function goBack() {
+            if (pageHistory.length > 0) {
+                const prevPage = pageHistory.pop();
+                document.getElementById(currentPage + '-page').classList.remove('active');
+                currentPage = prevPage;
+                document.getElementById(prevPage + '-page').classList.add('active');
+                
+                if (prevPage === 'login') {
+                    document.querySelector('.back-btn').classList.remove('show');
+                }
+            }
+        }
+
+        function showError(msg) {
+            const errorDiv = document.getElementById('error-msg');
+            errorDiv.textContent = msg;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error-msg').style.display = 'none';
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const data = new FormData(e.target);
+            const username = data.get('username');
+            const password = data.get('password');
+            
+            if (username && password) {
+                window.location.href = 'Home.html';
+            } else {
+                showError('Please fill all fields');
+            }
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+            const data = new FormData(e.target);
+            const password = data.get('password');
+            const confirmPassword = data.get('confirm-password');
+            
+            if (password !== confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+            
+            showPage('email-verification');
+        }
+
+        function handleForgotPassword(e) {
+            e.preventDefault();
+            const data = new FormData(e.target);
+            const email = data.get('email');
+            
+            if (email) {
+                showPage('reset-password');
+            }
+        }
+
+        function handleResetPassword(e) {
+            e.preventDefault();
+            const data = new FormData(e.target);
+            const newPassword = data.get('new-password');
+            const confirmPassword = data.get('confirm-new-password');
+            
+            if (newPassword !== confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+            
+            alert('Password updated successfully!');
+            showPage('login');
+        }
+
+        function handleEmailVerification(e) {
+            e.preventDefault();
+            const inputs = document.querySelectorAll('.code-input input');
+            let code = '';
+            inputs.forEach(input => code += input.value);
+            
+            if (code.length === 6) {
+                alert('Email verified successfully!');
+                showPage('login');
+            } else {
+                showError('Please enter complete code');
+            }
+        }
+
+        function moveNext(current, index) {
+            if (current.value.length === 1 && index < 5) {
+                const inputs = document.querySelectorAll('.code-input input');
+                inputs[index + 1].focus();
+            }
+        }
+
+        function resendCode() {
+            alert('Code resent!');
+            document.querySelectorAll('.code-input input').forEach(input => {
+                input.value = '';
+            });
+            document.querySelector('.code-input input').focus();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeInputs = document.querySelectorAll('.code-input input');
+            codeInputs.forEach((input, index) => {
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Backspace' && !input.value && index > 0) {
+                        codeInputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

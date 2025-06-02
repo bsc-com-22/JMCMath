@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMC Mathematics - Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                JMC<span class="logo-subtitle">| Math & Academics</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-trigger">
+                        Resources <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="library.html">Library</a>
+                        <a href="tutorials.html">Tutorials</a>
+                    </div>
+                </div>
+                <a href="courses.html" class="active">Courses</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!-- Search and Actions -->
+            <div class="header-actions">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search.......">
+                </div>
+                <a href="jmcplus.html" class="btn-primary no-underline">
+                    <i class="fas fa-crown"></i> JMC Plus
+                </a>
+
+                <a href="SignIn.html" class="btn-secondary no-underline">
+                    <i class="fas fa-user"></i> Sign In
+                </a>
+
+            </div>
+
+            <!-- Mobile menu button -->
+            <button type="menu" class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search.......">
+            </div>
+            <nav class="mobile-nav">
+                <a href="index.html">Home</a>
+                <button class="mobile-dropdown-trigger" id="mobile-dropdown-trigger">
+                    Resources <i class="fas fa-chevron-down" id="mobile-dropdown-icon"></i>
+                </button>
+                <div class="mobile-dropdown-content" id="mobile-dropdown">
+                    <a href="library.html">Library</a>
+                    <a href="tutorials.html">Tutorials</a>
+                </div>
+                <a href="courses.html" class="active">Courses</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="mobile-actions">
+                <a href="jmcplus.html">
+                    <button class="btn-primary">
+                    <i class="fas fa-crown"></i> JMC Plus
+                </button>
+                </a>
+                <a href="SignIn.html">
+                    <button class="btn-secondary">
+                    <i class="fas fa-user"></i> Sign In
+                </button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script src="scripts.js"></script>
+</body>
+</html>
